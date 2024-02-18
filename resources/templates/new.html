@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<div>
+     <h3>Employee Services...</h3>
+       <form id="uploadFiles" method="POST" th:action=@{/save} encType="multipart/form-data" th:object ="${doc}">
+       <!--<input type="hidden" th:field="${doc.id}" />-->
+       <input type="file" name="files" multiple required />
+       <button type="submit">Submit</button>
+     </form>
+   </div>
+</body>
+</html>
+
+
+

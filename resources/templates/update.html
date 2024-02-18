@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+	<body>
+    <div class="container">
+        <h1>Update File</h1>
+
+        <form th:action="@{/update/{id}(id=${doc.id})}" th:object="${doc}" method="post" enctype="multipart/form-data">
+            <div >
+                <label for="docName">Filename:</label>
+                <input type="text" id="docName" th:field="*{docName}" >
+            </div>
+            <div >
+                <label for="docType">Document Type:</label>
+                <input type="text" id="docType" th:field="*{docType}">
+            </div>
+            <div >
+                <label for="file">New File (Optional):</label>
+                <input type="file" id="file" name="file" >
+            </div>
+           <button type="submit">Update</button>
+         </form>
+
+    <a th:href="@{/}">Back to Home</a>
+  </body> 
+	 
+
+</html>
